@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :users
-  has_many :wishs, through: :users
+  has_many :collections
+  has_many :wishs, through: :collections
 end
