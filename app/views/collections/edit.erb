@@ -1,0 +1,14 @@
+<h1>Edit WishList Name</h1>
+<form method="post" action="/collections/<%=@collection.id%>">
+<input id="hidden" type="hidden" name="_method" value="PATCH">
+<input type="text" name="name" value="<%=@collection.name%>"><br><br>
+
+<% @collection.wishs.each do |wish| %>
+<h1><i class="fa fa-minus"></i><%= wish.name %></h1>
+<a href="/wishes/<%= wish.id %>/edit"><i class="fa fa-pencil"></i> Edit Wish</a>
+<a href="/wishes/<%= wish.id %>/delete"><i class="fa fa-times"></i> Delete Wish</a>
+<% end %>
+
+<br>
+<input class="btn btn-primary" type="submit" name="update" value="Update">
+</form>

@@ -1,0 +1,16 @@
+
+<h1>New Wish</h1>
+
+<form method="post" action="/wishes/new">
+<input type="text" name="name" placeholder="Wish Name">
+
+<br>
+<label>Add To An Existing WishList</label><br>
+<% @collections.each do |collection| %>
+<% if collection.user_id == @user.id %>
+<input type="checkbox" name="collection_id" value="<%=collection.id%>"><%=collection.name%><br>
+<% end %>
+<% end %>
+<br>
+<input class="btn btn-primary" type="submit" name="create" value="Create">
+</form>

@@ -1,0 +1,6 @@
+<p>Are you sure you want to delete <%= @wish.name %>?</p>
+
+<form method="post" action="/wishes/<%=@wish.id%>">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+<form>

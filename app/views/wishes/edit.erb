@@ -1,0 +1,8 @@
+
+<h1>Wish Edit</h1>
+<form method="post" action="/wishes/<%= @wish.id %>">
+<input id="hidden" type="hidden" name="_method" value="patch">
+<input type="text" name="name" value="<%= @wish.name %>" placeholder="<%= @wish.name %>">
+
+<input class="btn btn-primary" type="submit" name="edit" value="Edit">
+</form>

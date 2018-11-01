@@ -1,26 +1,36 @@
 <!doctype html>
 <html>
   <head>
-    <title>WishList app</title>
+    <title>WishList</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
 <body>
- <nav class="navbar navbar-default">
+
+<nav class="navbar navbar-default">
   <div class="container-fluid">
   <div class="navbar-header">
-    <a class="navbar-brand" href="/">WishList</a>
+    <a class="navbar-brand" href="/wishes">WishList</a>
   <ul class="nav navbar-nav">
+
+  <% if logged_in? %>
+  <li><a href="/collections/new">Create New WishList</a></li>
+  <li><a href="/wishes/new">Create New Wish</a></li>
+  <li><a href="/logout">Log Out</a></li>
+
+  <% else %>
   <li><a href="/login">Log In</a></li>
   <li><a href="/signup">Sign Up</a></li>
-  <li><a href="/logout">Log Out</a></li>
-  <li><a href="/tasks">Home</a></li>
+  <% end %>
   </ul>
 </div>
 </div>
 </nav>
- <div class="col-md-6 col-md-offset-2">
-  <%= yield %>
- </div>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<div class="col-md-6 col-xs-offset-2">
+
+<%= yield %>
+
+</div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>

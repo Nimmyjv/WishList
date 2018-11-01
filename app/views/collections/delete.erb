@@ -1,0 +1,6 @@
+<h1>Deleting <%= @collection.name %></h1>
+<p>Are you sure you want to delete this whole Wishlist?</p>
+<form method="post" action="/collections/<%=@collection.id%>">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+<form>
